@@ -23,26 +23,32 @@
     <td>we are not open</td>
     <td>we are not open</td>
   </tr>
-    
+  <tr>
+    <th scope="row">11:00 - 13:00</th>
+    <td>not in service</td>
+    <td>not in service</td>
+    <td>Closed</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+   
 </table>
 
 <p>New Table</p>
-<table class="unclaimed-payments-table"> <tbody> <!---->
-  <tr data-ng-if="$ctrl.taxModule.unclaimedPayments.estimatedTaxPayments"> 
-    <th class="unclaimed-payments-header">
-      <a title="This link will open information in a new window" class="innerTableExternalLink" href="#" data-ng-click="$ctrl.goToEstimatedTaxPaymentInformation()"> 
-        Estimated Tax <span class="text-nowrap">Payments></span> </a> </th> 
-      <td class="unclaimed-payments-value"> $100.00 </td> 
-  </tr><!----> <!---->
-  <tr data-ng-if="$ctrl.taxModule.unclaimedPayments.appliedFromPriorYear"> 
-    <th class="unclaimed-payments-header" scope="row"> Applied From Prior Year </th> 
-    <td class="unclaimed-payments-value"> $100.00 </td> </tr><!----> <!---->
-  <tr class="unclaimed-payments-total" data-ng-if="$ctrl.taxModule.unclaimedPayments.totalPayments"> 
-    <th class="unclaimed-payments-header" scope="row"> TOTAL PAYMENTS </th> 
-    <td class="unclaimed-payments-value"> $200.00 </td> 
-  </tr>
-  <!----> 
-  </tbody> 
-  </table>
+<table class="unclaimed-payments-table"> <tbody> <!----><tr data-ng-if="$ctrl.taxModule.unclaimedPayments.estimatedTaxPayments"> <th class="unclaimed-payments-header" scope="row">  <a title="This link will open up IRS policy information on Estimated Tax Payments in a new window" class="innerTableExternalLink" aria-label="Estimated Tax Payments" href="#" data-ng-click="$ctrl.goToEstimatedTaxPaymentInformation()"> Estimated Tax <span class="text-nowrap">Payments<svg xmlns="http://www.w3.org/2000/svg" class="irs-icon-external-link-blue" viewBox="0 0 1792 1792" focusable="false"><path d="M 1408 928 v 320 q 0 119 -84.5 203.5 t -203.5 84.5 h -832 q -119 0 -203.5 -84.5 t -84.5 -203.5 v -832 q 0 -119 84.5 -203.5 t 203.5 -84.5 h 704 q 14 0 23 9 t 9 23 v 64 q 0 14 -9 23 t -23 9 h -704 q -66 0 -113 47 t -47 113 v 832 q 0 66 47 113 t 113 47 h 832 q 66 0 113 -47 t 47 -113 v -320 q 0 -14 9 -23 t 23 -9 h 64 q 14 0 23 9 t 9 23 Z m 384 -864 v 512 q 0 26 -19 45 t -45 19 t -45 -19 l -176 -176 l -652 652 q -10 10 -23 10 t -23 -10 l -114 -114 q -10 -10 -10 -23 t 10 -23 l 652 -652 l -176 -176 q -19 -19 -19 -45 t 19 -45 t 45 -19 h 512 q 26 0 45 19 t 19 45 Z" /> </svg></span> </a> </th> <td class="unclaimed-payments-value"> $100.00 </td> </tr><!----> <!----><tr data-ng-if="$ctrl.taxModule.unclaimedPayments.appliedFromPriorYear"> <th class="unclaimed-payments-header" scope="row"> Applied From Prior Year </th> <td class="unclaimed-payments-value"> $100.00 </td> </tr><!----> <!----><tr class="unclaimed-payments-total" data-ng-if="$ctrl.taxModule.unclaimedPayments.totalPayments"> <th class="unclaimed-payments-header" scope="row"> TOTAL PAYMENTS </th> <td class="unclaimed-payments-value"> $200.00 </td> </tr><!----> </tbody> </table>
+
+
+<h2>List</h2>
+
+<ul class="list-group list-unstyled"> 
+  <li class="tax-record-list-item">
+    <div class="tax-record-detail row"> <span class="col-xs-6 text-left">Form Filed:</span> 
+    <span class="year col-xs-6 text-right"><strong>1040 EZ</strong></span> </div></li> 
+  <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Filing Status:</span>
+    <span class="year col-xs-6 text-right"> <strong> Single</strong></span> </div></li> 
+  <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Total Exemptions Claimed:</span> <span class="year col-xs-6 text-right"> <strong>1</strong> </span> </div></li> <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Adjusted Gross Income:</span><span class="year col-xs-6 text-right"> <strong> $38,000.00</strong></span> </div></li> <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Balance Owed:</span><span class="year col-xs-6 text-right"> <strong>$1,054.74</strong></span> 
+  </div>
+  </li> 
+  </ul>
 </body>
 </html>
