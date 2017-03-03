@@ -1,35 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
 
 <body>
-
-<table class="table table-condensed" id="recentPaymentTable"
-                                  irs-test-id="recentPaymentTable" workaround-click>
-                           <caption class="sr-only">
-                           table with payment information. 
-                           </caption>
-                                  <tbody ng-if="hasPayments()">
-                                  <tr irs-test-id="incomeTaxTitleRow">
-                            <th id="ov-tax-payment-year-type" class="pad-left">Year / Type</th>
-                            <th id="ov-tax-payment-amount-date" class="pull-right">Amount / Date &nbsp;&nbsp;&nbsp;</th>
-                        </tr>
-                                         <tr 
-                          data-ng-repeat="payment in payments.payments | orderBy:'receivedDate':true"
-                          irs-test-id="paymentHistoryRow"                                                  
-                          tabindex="0"
-                          >
-                                                <td id="paymentDateType" headers="ov-tax-payment-year-type" class="td-label">2017</td>
-                            <td id="paymentAmountYear" headers="ov-tax-payment-amount-date" class="td-label">
-                                <span class="pull-right text-right">                           
-                                                                   
-                                </span>
-                            200</td>
-                                         </tr>
-                                  </tbody>
+<H1> Testing a table with a link</H1>
+  
+<table>
+  <caption>Delivery slots:</caption>
+  <tr>
+    <td></td>
+    <th scope="col">Monday</th>
+    <th scope="col">Tuesday</th>
+    <th scope="col">Wednesday</th>
+    <th scope="col">Thursday</th>
+    <th scope="col">Friday</th>
+  </tr>
+  <tr>
+    <th scope="row">09:00 - 11:00</th>
+    <td>Closed</td>
+    <td><a href="https://www.google.com/">testing a link</a></td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+  <tr>
+    <th scope="row">11:00 - 13:00</th>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+   
 </table>
 
 </body>
