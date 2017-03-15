@@ -1,54 +1,326 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
 
 <body>
-<table>
-  <caption>Delivery slots:</caption>
-  <tr>
-    <td></td>
-    <th scope="col">Monday</th>
-    <th scope="col">Tuesday</th>
-    <th scope="col">Wednesday</th>
-    <th scope="col">Thursday</th>
-    <th scope="col">Friday</th>
-  </tr>
-  <tr>
-    <th scope="row">09:00 - 11:00</th>
-    <td>not in service</td>
-    <td><a href="https://www.google.com/">Love 508</a></td>
-    <td>we are not open</td>
-    <td>we are not open</td>
-    <td>we are not open</td>
-  </tr>
-  <tr>
-    <th scope="row">11:00 - 13:00</th>
-    <td>not in service</td>
-    <td>not in service</td>
-    <td>Closed</td>
-    <td>Closed</td>
-    <td>Closed</td>
-  </tr>
-   
-</table>
-
-<p>New Table</p>
-<table class="unclaimed-payments-table"> <tbody> <!----><tr data-ng-if="$ctrl.taxModule.unclaimedPayments.estimatedTaxPayments"> <th class="unclaimed-payments-header" scope="row">  <a title="This link will open up IRS policy information on Estimated Tax Payments in a new window" class="innerTableExternalLink" aria-label="Estimated Tax Payments" href="#" data-ng-click="$ctrl.goToEstimatedTaxPaymentInformation()"> Estimated Tax <span class="text-nowrap">Payments<svg xmlns="http://www.w3.org/2000/svg" class="irs-icon-external-link-blue" viewBox="0 0 1792 1792" focusable="false"><path d="M 1408 928 v 320 q 0 119 -84.5 203.5 t -203.5 84.5 h -832 q -119 0 -203.5 -84.5 t -84.5 -203.5 v -832 q 0 -119 84.5 -203.5 t 203.5 -84.5 h 704 q 14 0 23 9 t 9 23 v 64 q 0 14 -9 23 t -23 9 h -704 q -66 0 -113 47 t -47 113 v 832 q 0 66 47 113 t 113 47 h 832 q 66 0 113 -47 t 47 -113 v -320 q 0 -14 9 -23 t 23 -9 h 64 q 14 0 23 9 t 9 23 Z m 384 -864 v 512 q 0 26 -19 45 t -45 19 t -45 -19 l -176 -176 l -652 652 q -10 10 -23 10 t -23 -10 l -114 -114 q -10 -10 -10 -23 t 10 -23 l 652 -652 l -176 -176 q -19 -19 -19 -45 t 19 -45 t 45 -19 h 512 q 26 0 45 19 t 19 45 Z" /> </svg></span> </a> </th> <td class="unclaimed-payments-value"> $100.00 </td> </tr><!----> <!----><tr data-ng-if="$ctrl.taxModule.unclaimedPayments.appliedFromPriorYear"> <th class="unclaimed-payments-header" scope="row"> Applied From Prior Year </th> <td class="unclaimed-payments-value"> $100.00 </td> </tr><!----> <!----><tr class="unclaimed-payments-total" data-ng-if="$ctrl.taxModule.unclaimedPayments.totalPayments"> <th class="unclaimed-payments-header" scope="row"> TOTAL PAYMENTS </th> <td class="unclaimed-payments-value"> $200.00 </td> </tr><!----> </tbody> </table>
-
-
-<h2>List</h2>
-
-<ul class="list-group list-unstyled"> 
-  <li class="tax-record-list-item">
-    <div class="tax-record-detail row"> <span class="col-xs-6 text-left">Form Filed:</span> 
-    <span class="year col-xs-6 text-right"><strong>1040 EZ</strong></span> </div></li> 
-  <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Filing Status:</span>
-    <span class="year col-xs-6 text-right"> <strong> Single</strong></span> </div></li> 
-  <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Total Exemptions Claimed:</span> <span class="year col-xs-6 text-right"> <strong>1</strong> </span> </div></li> <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Adjusted Gross Income:</span><span class="year col-xs-6 text-right"> <strong> $38,000.00</strong></span> </div></li> <li class="tax-record-list-item"><div class="tax-record-detail row"> <span class="col-xs-6 text-left">Balance Owed:</span><span class="year col-xs-6 text-right"> <strong>$1,054.74</strong></span> 
+<!---->
+<!---->
+<div class="body-wrapper" ng-switch-when="true">
+  <!---->
+  <div class="us-gov" ng-include="'views/usgov.html'">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p>An official website of the United States Government</p>
+        </div>
+      </div>
+    </div>
   </div>
-  </li> 
-  </ul>
+  <!---->
+  <div class="header" ng-controller="HeaderCtrl" ng-include="'views/header.html'">
+    <div class="container" role="banner">
+      <div class="row">
+        <div class="col-sm-12 clearfix">
+          <div id="skip-nav"><a title="Skip to page content" accesskey="p" href="https://baldue-mvp-master-pl.irslabs.org/ola/#main-content">Skip to main content</a></div>
+          <a class="pull-left logo" aria-label="Return to the main view." href="" ng-click="irsLogoClick()"><img aria-hidden="true" alt="IRS logo" src="https://baldue-mvp-master-pl.irslabs.org/ola/images/irs_horiz_white.3f98f4a4.svg" /></a>
+          <div class="nav-link pull-right" id="logoutDiv" irs-test-id="logoutDiv">
+            <ul class="navbar-nav">
+              <li class="greeting hidden-xs" irs-test-id="userName">Welcome, <span class="name">ANNIE AUTHSON</span></li>
+              <li><a tabindex="0" class="logout-toggle" href="https://sa1altdev.rup.afsiep.net/eauth/secure/profile/profile_update.jsp" irs-test-id="profileLink"> Profile<span class="sr-only"> This link will open User Profile page in the same browser window.</span></a></li>
+              <li><a tabindex="0" class="logout-toggle" href="" ng-click="logoutButton()" irs-test-id="logoutAnchor"> Logout<span class="sr-only"> This link will log the user out.</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span irs-analytic="BALDUE:LOGIN"></span></div>
+  <div class="row">
+    <!---->
+    <!---->
+    <div class="body-wrapper" ng-switch-when="true">
+      <!---->
+      <div class="us-gov" ng-include="'views/usgov.html'">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <p>An official website of the United States Government</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="header" ng-controller="HeaderCtrl" ng-include="'views/header.html'">
+        <div class="container" role="banner">
+          <div class="row">
+            <div class="col-sm-12 clearfix">
+              <div id="skip-nav2"><a title="Skip to page content" accesskey="p" href="https://baldue-mvp-master-pl.irslabs.org/ola/#main-content">Skip to main content</a></div>
+              <a class="pull-left logo" aria-label="Return to the main view." href="" ng-click="irsLogoClick()"><img aria-hidden="true" alt="IRS logo" src="https://baldue-mvp-master-pl.irslabs.org/ola/images/irs_horiz_white.3f98f4a4.svg" /></a>
+              <div class="nav-link pull-right" id="logoutDiv2" irs-test-id="logoutDiv">
+                <ul class="navbar-nav">
+                  <li class="greeting hidden-xs" irs-test-id="userName">Welcome, <span class="name">ANNIE AUTHSON</span></li>
+                  <li><a tabindex="0" class="logout-toggle" href="https://sa1altdev.rup.afsiep.net/eauth/secure/profile/profile_update.jsp" irs-test-id="profileLink"> Profile<span class="sr-only"> This link will open User Profile page in the same browser window.</span></a></li>
+                  <li><a tabindex="0" class="logout-toggle" href="" ng-click="logoutButton()" irs-test-id="logoutAnchor"> Logout<span class="sr-only"> This link will log the user out.</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span irs-analytic="BALDUE:LOGIN"></span></div>
+      <div class="row">
+        <!---->
+        <div ng-controller="SummaryCtrl" ng-include="'views/summary.html'">
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+          <!---->
+          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" id="cum-bal-due" data-ng-if="!showTaxPayerMustCallAlert()">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div class="panel ola-panel ola-panel-top-row" id="baldue-panel" irs-test-id="balDueMainPanel" irs-analytic="BALDUE:SUMMARY" data-ng-if="showPaymentSection()" details="">
+              <div class="panel-body">
+                <!---->
+                <div class="info-group-body text-center">
+                  <h2 class="sr-only">Cumulative Balance Due</h2>
+                  <div class="info-list-item" id="show-balance-due" data-ng-switch="showBalanceDue()">
+                    <!---->
+                    <!---->
+                    <div id="unableToCalculateMessage" irs-test-id="unableToCalculateMessage" data-ng-switch-when="false">
+                      <div>Sorry, we are not able to show your cumulative balance due at this time.</div>
+                    </div>
+                    <!---->
+                    <div id="disclaimer">
+                      <div id="current-data">The information provided is based on our current data.</div>
+                      <div id="disclaimer-list"> The numbers here may not reflect:
+                        <ul>
+                          <li>Recently filed or processing returns</li>
+                          <li>Recent payments or adjustments</li>
+                          <li>Information on your business account</li>
+                          <li>Civil penalties</li>
+                          <li>Installment agreement user fees</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+              </div>
+            </div>
+            <!---->
+          </div>
+          <!---->
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-sm-push-6 col-md-push-0">
+            <div class="panel ola-panel ola-panel-top-row">
+              <div class="panel-body payment-options" id="payment-options">
+                <div class="info-group-body">
+                  <h2 class="title-primary">Payment Options</h2>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn-payment" role="button" data-ng-click="openPayByBankModal()">Pay by Bank Account</button>
+                    </div>
+                    <div class="col-sm-12">
+                      <button class="btn btn-payment btn-pay-by-card" role="button" data-ng-click="openPayByCardModal()">Pay by Card</button>
+                      <p class="text-secondary-help">Fees apply when paying by card.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body border-top-dotted">
+                <!---->
+                <div class="row" data-ng-if="!showMaintenanceAlert()">
+                  <div class="col-sm-12">
+                    <button class="btn btn-block btn-payment inside-out installment" role="button" data-ng-click="openSetupPaymentPlanModal()">Need More Time to Pay?</button>
+                  </div>
+                </div>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div ng-view="">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-sm-pull-6 col-md-pull-0">
+            <div class="panel home-panel overview-panel">
+              <div>
+                <div class="controls clearfix">
+                  <h4 class="no-margin pull-left"> 2015 Tax Year </h4>
+                  <a class="pull-right" role="button" aria-label="Return to Year Overview Table" href="https://baldue-mvp-master-pl.irslabs.org/ola/" data-ng-click="backButton()" data-ng-href="." irs-focus=""><span class="back-btn"> Back </span></a></div>
+                <div data-ng-switch="hasUnclaimedPayments()">
+                  <!---->
+                  <h5 class="unclaimed-payments-row unclaimed-payments-title"> Income Tax</h5>
+                  <!---->
+                  <div class="unclaimed-payments-alert" data-ng-if="$ctrl.taxModule.taxModuleStatus !== 'NOT_AVAILABLE'">
+                    <!---->
+                    <!---->
+                    <div data-ng-if="$ctrl.taxModule.taxModuleStatus == 'NO_RETURN_ON_FILE_PASTDUE'">
+                      <h5 class="alert-title" irs-test-id="NO_RETURN_ON_FILE_PASTDUE">Your tax return has not been processed and the due date has passed.</h5>
+                      <p>Submit your return as soon as possible to minimize potential penalties and interest.</p>
+                      <p>If you've already filed, processing usually takes 21 days (electronic returns) or six weeks (paper returns).</p>
+                    </div>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                  <p class="unclaimed-payments-row"> Our records show you have payments applied to your account which need to be claimed on your tax return. </p>
+                  <ul class="unclaimed-payments-list">
+                    <!---->
+                    <li class="unclaimed-payments-row" data-ng-if="$ctrl.taxModule.unclaimedPayments.estimatedTaxPayments"> <span class="unclaimed-payments-key"><a title="This link will open up IRS policy information on Estimated Tax Payments in a new window" class="innerTableExternalLink" href="https://baldue-mvp-master-pl.irslabs.org/ola/#" data-ng-click="$ctrl.goToEstimatedTaxPaymentInformation()"> Estimated Tax Payments </a></span> <span class="unclaimed-payments-value"> $300.00 </span></li>
+                    <!---->
+                    <!---->
+                    <li class="unclaimed-payments-row" data-ng-if="$ctrl.taxModule.unclaimedPayments.appliedFromPriorYear"> <span class="unclaimed-payments-key"> Applied From Prior Year </span> <span class="unclaimed-payments-value"> $300.00 </span></li>
+                    <!---->
+                    <!---->
+                    <li class="unclaimed-payments-total" data-ng-if="$ctrl.taxModule.unclaimedPayments.totalPayments"> <span class="unclaimed-payments-key"> TOTAL PAYMENTS </span> <span class="unclaimed-payments-value"> $600.00 </span></li>
+                    <!---->
+                  </ul>
+                  <!---->
+                  <!---->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <!---->
+          <div ng-if="$ctrl.panelShowing &amp;&amp; $ctrl.isTaxYearsInBalanceData()">
+            <div class="panel ola-panel">
+              <h2 class="title-primary payment-title" id="recent-payments-description" test-irs-id="recent-payments-description"> Recent Payments <span class="recent-payments-duration">(within 18 months)</span></h2>
+              <span class="sr-only"> A list of your recent payments made the to IRS. </span>
+              <p class="recent-payments-sub-title">Payments may take 2 days (electronic) to 3 weeks (mail) to be listed.</p>
+              <div class="rpy-no-payments-msg-outer" id="rpy-no-payments-msg-outer">
+                <!---->
+              </div>
+              <!---->
+              <div ng-if="$ctrl.hasPayments">
+                <table class="rpy-tb">
+                  <caption class="sr-only">
+                    Recent Payments table with payment information.
+                  </caption>
+                  <thead>
+                    <tr irs-test-id="paymentTitleRow">
+                      <th class="rpy-th" scope="col"><span class="pad-left">Tax Year / Type</span></th>
+                      <th class="rpy-th" scope="col"><span class="pull-right text-right">Amount / Date</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!---->
+                    <tr tabindex="0" irs-test-id="paymentHistoryRow" data-ng-repeat="payment in $ctrl.payments">
+                      <td class="rpy-td-col-left"><span class="year"><strong>2016</strong> <br />
+                        Estimated Tax Payment</span></td>
+                      <td class="rpy-td-col-right"><span class="pull-right text-right"><strong>$100.00</strong><br />
+                        Mar 13, 2016 </span></td>
+                    </tr>
+                    <!---->
+                    <tr tabindex="0" irs-test-id="paymentHistoryRow" data-ng-repeat="payment in $ctrl.payments">
+                      <td class="rpy-td-col-left"><span class="year"><strong>2015</strong> <br />
+                        Estimated Tax Payment</span></td>
+                      <td class="rpy-td-col-right"><span class="pull-right text-right"><strong>$300.00</strong><br />
+                        Mar 13, 2016 </span></td>
+                    </tr>
+                    <!---->
+                  </tbody>
+                  <!---->
+                  <!---->
+                </table>
+              </div>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <div>
+            <div class="panel ola-panel">
+              <h2 class="title-primary tax-record-title" test-irs-id="tax-records-description">Tax Records</h2>
+              <p class="tax-record-sub-title">Key Information from your current tax return as originally filed.</p>
+              <!---->
+              <div class="tax-record-detail" data-ng-repeat="taxRecord in $ctrl.taxRecords">
+                <div class="tax-record-year row"><strong>2016</strong></div>
+                <ul class="list-group list-unstyled">
+                  <li class="tax-record-list-item">
+                    <div class="tax-record-detail row"><span class="col-xs-6 text-left">Form Filed:</span> <span class="year col-xs-6 text-right"><strong>1040 EZ</strong></span></div>
+                  </li>
+                  <li class="tax-record-list-item">
+                    <div class="tax-record-detail row"><span class="col-xs-6 text-left">Filing Status:</span><span class="year col-xs-6 text-right"> <strong> Single</strong></span></div>
+                  </li>
+                  <li class="tax-record-list-item">
+                    <div class="tax-record-detail row"><span class="col-xs-6 text-left">Total Exemptions Claimed:</span> <span class="year col-xs-6 text-right"><strong>1</strong></span></div>
+                  </li>
+                  <li class="tax-record-list-item">
+                    <div class="tax-record-detail row"><span class="col-xs-6 text-left">Adjusted Gross Income:</span><span class="year col-xs-6 text-right"> <strong> $38,000.00</strong></span></div>
+                  </li>
+                  <li class="tax-record-list-item">
+                    <div class="tax-record-detail row"><span class="col-xs-6 text-left">Balance Owed:</span><span class="year col-xs-6 text-right"> <strong>$1,054.74</strong></span></div>
+                  </li>
+                </ul>
+              </div>
+              <!---->
+              <div class="border-top-solid tax-record-bottom-padding">
+                <p>View, print or download your tax records using the button below.</p>
+                <button title="This button will open an IRS application to request your tax records in a new window" class="btn btn-tax-record" role="button" data-ng-click="$ctrl.goToTaxRecordOnline()">GET TAX RECORDS ONLINE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <!---->
+    <div ng-switch-when="true">
+      <!---->
+      <div class="container">
+        <div class="nav-link" id="footer-logo2"><img class="logo" aria-hidden="true" alt="Decorative IRS Logo" src="https://baldue-mvp-master-pl.irslabs.org/ola/images/irs_horiz_white.3f98f4a4.svg" /></div>
+        <div>
+          <ul id="footer-links2">
+            <li><a href="http://survey.foreseeresults.com/survey/display?cid=BAZQsB5xRUYZtxB5gM5BUw==&amp;sid=link-online-act" target="_blank" data-ng-click="goToGiveFeedback()" ng-href="http://survey.foreseeresults.com/survey/display?cid=BAZQsB5xRUYZtxB5gM5BUw==&amp;sid=link-online-act">Give Feedback <span class="sr-only"> This link will open ForeSee Survey in a new browser window.</span></a></li>
+            <li aria-hidden="true">|</li>
+            <li><a href="http://www.irs.gov/uac/IRS-Privacy-Policy" target="_blank" data-ng-click="goToPrivacyPolicy()" ng-href="http://www.irs.gov/uac/IRS-Privacy-Policy">Privacy Policy <span class="sr-only"> This link will open the IRS privacy policy in a new window.</span></a></li>
+            <li aria-hidden="true"><span class="hidden-xs">|</span></li>
+            <li id="accessibility-link2"><a href="https://baldue-mvp-master-pl.irslabs.org/ola/accessibilityGuide.html" target="_blank" data-ng-click="goToAccessibilityPage()" ng-href="accessibilityGuide.html">Accessibility <span class="sr-only"> This link will open the accessibility guide in a new window.</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <span id="nuanria_plugin_outer2">
+    <object id="nuanria_plugin2" type="application/x-dgnria2" style="left: 0px; top: 0px; width: 1px; height: 1px; position: fixed;">
+      <param name="ready" value="nuanria.globals.pluginReady();" />
+    </object>
+  </span></div>
+</div>
+<!---->
+<!---->
+<div ng-switch-when="true">
+  <!---->
+  <div class="container">
+    <div class="nav-link" id="footer-logo"><img class="logo" aria-hidden="true" alt="Decorative IRS Logo" src="https://baldue-mvp-master-pl.irslabs.org/ola/images/irs_horiz_white.3f98f4a4.svg" /></div>
+    <div>
+      <ul id="footer-links">
+        <li><a href="http://survey.foreseeresults.com/survey/display?cid=BAZQsB5xRUYZtxB5gM5BUw==&amp;sid=link-online-act" target="_blank" ng-href="http://survey.foreseeresults.com/survey/display?cid=BAZQsB5xRUYZtxB5gM5BUw==&amp;sid=link-online-act" data-ng-click="goToGiveFeedback()">Give Feedback <span class="sr-only"> This link will open ForeSee Survey in a new browser window.</span></a></li>
+        <li aria-hidden="true">|</li>
+        <li><a href="http://www.irs.gov/uac/IRS-Privacy-Policy" target="_blank" ng-href="http://www.irs.gov/uac/IRS-Privacy-Policy" data-ng-click="goToPrivacyPolicy()">Privacy Policy <span class="sr-only"> This link will open the IRS privacy policy in a new window.</span></a></li>
+        <li aria-hidden="true"><span class="hidden-xs">|</span></li>
+        <li id="accessibility-link"><a href="https://baldue-mvp-master-pl.irslabs.org/ola/accessibilityGuide.html" target="_blank" ng-href="accessibilityGuide.html" data-ng-click="goToAccessibilityPage()">Accessibility <span class="sr-only"> This link will open the accessibility guide in a new window.</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!---->
+<span id="nuanria_plugin_outer">
+<object id="nuanria_plugin" type="application/x-dgnria2" style="left: 0px; top: 0px; width: 1px; height: 1px; position: fixed;">
+  <param name="ready" value="nuanria.globals.pluginReady();" />
+</object>
+</span>
 </body>
 </html>
