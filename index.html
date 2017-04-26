@@ -1,394 +1,60 @@
-
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8"/>
-<title>Demonstration of accessible expanding/collapsing sections</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Mon, 24 Apr 2017 17:02:04 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Overview by Year Table -- Listgroup example</title>
+    
+    <style type="text/css">
+    <!--
+    body {
+      color:#000000;
+      background-color:#FFFFFF;
+      background-image:url('Background Image');
+      background-repeat:no-repeat;
+    }
+    a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+      .container{font-family: Arial;font-size: medium;font-weight: 400;font-style: normal;text-decoration: none;text-transform: none;}
+	  
 
-<style>
-.content.shown{
-	display: block;
-	}
-.content.hidden {
-display: none;
-}
-body {
-	font-family: arial; }
-</style>
-
-<script src="http://code.jquery.com/jquery.min.js"></script>
-
-<script>
-//<![CDATA[
-//alert ("ready");
-$(document).ready (function () {
-
-$(".trigger").on("click", function (e) {
-var id = this.id;
-var $content = $(this).next (".content");
-//var expanded = $content.is(":visible");
-var expanded = $content.hasClass ("shown");
-
-// hide/show content
-if (expanded) {
-$content.removeClass ("shown");
-$content.addClass ("hidden");
-
-} else {
-$content.removeClass ("hidden");
-$content.addClass ("shown");
-} // if
-
-//alert ("trigger: " + $(this).text());
-// state indicator
-// aria
-$(this).find ("[aria-expanded]")
-.attr ("aria-expanded", !expanded);
-
-$(this).find ("[aria-pressed]")
-.attr ("aria-pressed", !expanded);
-
-// images with class imageIndicator
-$(this).find (".imageIndicator").attr ({
-"src":
-(expanded)? "collapsed.jpg" : "expanded.jpg",
-"alt":
-(expanded)? "collapsed" : "expanded"
-}); // image
-
-// text
-$(this).find (".textIndicator")
-.text (
-(expanded)? " + " : " - "
-); // text
-
-// focus
-$(this).focus ();
-
-}); // click .trigger
-
-$("#automaticallyRead").on ("click", function () {
-if (this.checked) {
-$("#expandingSectionsContainer").attr ("aria-live", "polite");
-} else {
-$("#expandingSectionsContainer").attr ("aria-live", "off");
-} // if
-}); // click #automaticallyRead
-
-
-}); // ready
-
-alert("loaded");
-//]]>
-</script>
-</head>
-<body>
-<h1>Accessible Expanding/Collapsing Sections</h1>
-
-
-<p>This is a demonstration of how to make expanding/collapsing content accessible to screen-reader users.  Each section is comprised of a trigger element and associated content pane. When a trigger is clicked, its following sibling is toggled (unhidden/hidden).
-<em>Note that this differs from an accordion because any or all of the sections may be shown or hidden simultaneously. An accordion insures that at most one section is opened at a time.</em>
-</p><p>
-Screen reader users find it helpful to know if a section is expanded/collapsed. A sighted user can see this easily, but since the screen reader user's "focus" only encompasses the element currently being read (the current trigger for instance), it makes life easier if we include a "state indicator" on the trigger. There are several ways to do this.
-<!--You can try them by checking any or all of the items in the list below.-->
-</p>
-<!--<div role="application">
-<label><input type="radio" name="triggerType" id="triggerIsButton" checked="true"> Trigger is a button</label>
-<label><input type="radio" name="triggerType" id="triggerIsLink"> Trigger is a link</label>
-</div><div>
-<ul><li><label>
-<input type="checkbox" id="aria-expanded">
-<span aria-hidden="true">use aria-expanded</span>
-</label></li><li><label>
-<input type="checkbox" id="aria-pressed">
-<span aria-hidden="true">use aria-pressed</span>
-</label></li><li><label>
-<input type="checkbox" id="image">
-<span aria-hidden="true">use an image with alt</span>
-</label></li><li><label>
-<input type="checkbox" id="text">
-<span aria-hidden="true">use text (the words collapsed or expanded, or as we have done, single characters "+" and "-"</span>
-</label></li></ul>
-</div>
+  .listname{font-family: Arial;font-weight: 700;}
+  
+  .listitem{font-family: Arial;font-weight: 400;text-decoration: none; }
+  
+  li{font-family: Arial;font-weight: 400;text-decoration: none;}
+  
+  ul{font-family: Arial;font-weight: 400;text-decoration: none;border-bottom: 5px ;border-bottom: 2px solid;}
 -->
-
-<p>One problem remains: how to signal that the trigger's state has changed.
-NVDA handles this properly in both browsers - no extra code is needed; it simply announces the state of aria-expanded when it changes.
-Jaws does not do this in either browser unless the role of the triggering element is button.
-</p><p>
-<span>
-<label>
-<input type="checkbox" id="automaticallyRead">
-Automatically Read
-</label>
-</span>
-If the content of the expanded sections is strictly text, one might choose to include live region markup on the parent div (here the one surrounding all triggers and content panes). Click the checkbox next to this paragraph to turn on this behavior.
-This will cause the text to speak each time a section is opened. This might be the right thing to do in an FAQ or something similar. Generally if the section contains only text (i.e. no form controls or images) and is reasonably short, there may be an advantage to having it read immediately. For more complex content however, we feel that simply notifying the user that it has opened and allowing them to decide how to interact with it is the correct approach.
-</p><p>
-<strong>Note that aria attributes do not in any way affect behavior; they simply cause the screen reader to generate announcements based on their value and the role of the element to which they are attached.</strong>
-</p><p>
-Users can press the Tab key to move from one expanding/collapsing link to the next, but because some sections contain hyperlinks, these links will receive focus as well.  In a section that contains many hyperlinks, this would force users to tab through all the links as they seek the control to activate the next expanding section.  For convenience, therefore, each expand/collapse link is also wrapped in a heading so that screen-reader users can move from one control to the next by simply pressing the heading shortcut key (e.g., JAWS and NVDA users can press the h key; VoiceOver users can press control+option+command+h).  This makes it much easier for users to find and operate each expand/collapse control without having to wade through groups of links within each section.
-</p><p>
-To see this solution in action, use the keyboard or a mouse to select the following three links.  View the source code to see how these examples were constructed.
-</p>
-
-<div id="expandingSectionsContainer">
-<h2     class="trigger">
-<a href="#" aria-expanded="false" aria-haspopup="true">
-link with aria-expanded
-</a></h2>
-<div class="content hidden">
-<p>Select the preceding text again to toggle this text on and off.  Note that this section contains a list of links.  Tabbing through the list in order to reach the next expand/collapse control would be tedious, which is why each control is wrapped in a heading.  Just press your screen reader's heading shortcut key to move the focus to the next expand/collapse control.
-</p><ul>
-    		<li><a href="http://www.w3.org">The World Wide Web Consortium</a></li>
-    		<li><a href="http://www.w3.org/TR/wai-aria/">ARIA 1.0</a></li>
-    		<li><a href="http://www.w3.org/WAI/intro/aria">ARIA Overview</a></li>
-    		<li><a href="http://www.w3.org/TR/wai-aria-practices/">ARIA 1.0 Authoring Practices</a></li>
-    		<li><a href="https://developer.mozilla.org/en-US/docs/Accessibility/ARIA">ARIA examples from Mozilla Developer Network</a></li>
-   		</ul>
+    </style>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="container" name="Overview by Year container">
+<h2>Recent Payments</h2>
+    <div>
+	<ul name="Shared Responsibility Payments" title="Shared Responsibility Payments" class="listname" style="list-style: none;">Shared responsibility Payments
+	<li >item one</li>
+    <li>item two</li>
+    <li>item three</li>
+    <li>item four</li>
+	</ul>
+	</div>
+ <div>
+	<ul name="Form 5329" title=Form 5329 information" class="listname" style="list-style: none;">Form 5329
+	<li>item one</li>
+    <li>item two</li>
+    <li>item three</li>
+    <li>item four</li>
+	</ul>
+	</div>
 </div>
-
-<h2     class="trigger">
-<a href="#">
-<img class="imageIndicator" alt=" collapsed " src="collapsed.jpg">
-link with image
-</a></h2>
-<div class="content hidden">
-<p>link with image state indicator</p>
-</div>
-
-<h2   class="trigger" >
-<button aria-expanded="false">
-button with aria-expanded
-</button></h2>
-<div class="content hidden">
-<p>button with aria-expanded</p>
-</div>
-
-<h2   class="trigger" >
-<button role="button" aria-pressed="false">
-toggle button
-</button></h2>
-<div class="content hidden">
-<p>toggle button</p>
-</div>
-
-<h2 class="trigger">
-<button>
-<span class="textIndicator"> + </span>
-button with textual state indicator
-</button></h2>
-<div class="content hidden">
-<p>Below is an accessible data table.</p>
-
-<table border="1" width="50%">
-      <tr>
-         <th></th>
-         <th scope="col"><span style="border-style:dashed;">Keys</span></th>
-         <th scope="col"><span style="border-style:dashed;">Buttons</span></th>
-         <th scope="col"><span style="border-style:dashed;">Strings</span></th>
-         <th scope="col"><span style="border-style:dashed;">Reeds</span></th>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Accordion</span></th>
-         <td>yes</td>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-     </tr>
-     <tr>
-         <th scope="row"><span style="border-style:dashed;">Violin</span></th>
-         <td>no</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-          <tr>
-         <th scope="row"><span style="border-style:dashed;">Piano</span></th>
-         <td>yes</td>
-         <td>no</td>
-         <td>yes</td>
-         <td>no</td>
-     </tr>
-  </table>
-</div>
-
-</div><!-- expandingSectionsContainer -->
-
-</body>
+  </body>
 </html>
