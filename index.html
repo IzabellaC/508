@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+function openWin() {
+    window.open("https://www.google.com");
+}
+</script>
 </head>
 <body>
 
@@ -14,9 +19,9 @@
   <h3>Tooltip Options</h3>
   <p>The <strong>trigger</strong> option specifies how the tooltip is triggered.</p>
   <div>
-    <button class="btn btn-success btn-md">Click me</button>
+    <button class="btn btn-success btn-md" >Click me</button>
     <button class="btn btn-warning btn-md">Hover over me</button>
-    <button class="btn btn-danger btn-md">Focus (tab or click)</button>
+    <button class="btn btn-danger btn-md" onclick="openWin()">Focus (tab or click)</button>
   </div>
 </div>
 
