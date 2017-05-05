@@ -1,60 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
-    <meta name="dcterms.created" content="Mon, 24 Apr 2017 17:02:04 GMT">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <title>Overview by Year Table -- Listgroup example</title>
-    
-    <style type="text/css">
-    <!--
-    body {
-      color:#000000;
-      background-color:#FFFFFF;
-      background-image:url('Background Image');
-      background-repeat:no-repeat;
-    }
-    a  { color:#0000FF; }
-    a:visited { color:#800080; }
-    a:hover { color:#008000; }
-    a:active { color:#FF0000; }
-      .container{font-family: Arial;font-size: medium;font-weight: 400;font-style: normal;text-decoration: none;text-transform: none;}
-	  
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-  .listname{font-family: Arial;font-weight: 700;}
-  
-  .listitem{font-family: Arial;font-weight: 400;text-decoration: none; }
-  
-  li{font-family: Arial;font-weight: 400;text-decoration: none;}
-  
-  ul{font-family: Arial;font-weight: 400;text-decoration: none;border-bottom: 5px ;border-bottom: 2px solid;}
--->
-    </style>
-    <!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-<div class="container" name="Overview by Year container">
-<h2>Recent Payments</h2>
-    <div>
-	<ul name="Shared Responsibility Payments" title="Shared Responsibility Payments" class="listname" style="list-style: none;">Shared responsibility Payments
-	<li >item one</li>
-    <li>item two</li>
-    <li>item three</li>
-    <li>item four</li>
-	</ul>
-	</div>
- <div>
-	<ul name="Form 5329" title=Form 5329 information" class="listname" style="list-style: none;">Form 5329
-	<li>item one</li>
-    <li>item two</li>
-    <li>item three</li>
-    <li>item four</li>
-	</ul>
-	</div>
+<div class="container">
+  <h3>Tooltip Options</h3>
+  <p>The <strong>trigger</strong> option specifies how the tooltip is triggered.</p>
+  <div>
+    <button class="btn btn-success btn-md">Click me</button>
+    <button class="btn btn-warning btn-md">Hover over me</button>
+    <button class="btn btn-danger btn-md">Focus (tab or click)</button>
+  </div>
 </div>
-  </body>
+
+<script>
+$(document).ready(function(){
+    $('.btn-success').tooltip({title: "Hooray!", trigger: "click"}); 
+    $('.btn-warning').tooltip({title: "Hooray!", trigger: "hover"}); 
+    $('.btn-danger').tooltip({title: "Hooray!", trigger: "focus"}); 
+});
+</script>
+
+</body>
 </html>
