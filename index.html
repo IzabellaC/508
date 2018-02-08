@@ -37,6 +37,29 @@ And
 
 
 <h1>Verify your identity - No legend and a field set</h1>
+
+
+<h1>Time Out</h1>
+<div class="session-timeout-modal" role="dialog" aria-modal="true" aria-labelledby="aria-modal-title" aria-describedby="timeout-modal-body">
+    <div class="modal-header session-timeout">
+        <h2 id="aria-modal-title" class="title-primary" irs-test-id="timeouttitle" tabIndex="-1">Session Expiration Notice</h2>
+    </div>
+    <div id="timeout-modal-body" class="modal-body session-timeout">
+      <p><strong><span>Your session will expire in</span> {{$ctrl.minutes}}<span class="sr-only">minutes</span>:{{$ctrl.seconds}}<span class="sr-only">seconds</span>. <span>Do you need more time?</span></strong></p>
+    </div>
+    <div class="modal-footer session-timeout-footer">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <a href="" data-ng-click="$ctrl.continueSession()" class="continue-btn btn btn-payment" role="button">Yes</a>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <a href="" data-ng-click="$ctrl.logoutTimeout()" class="logout-btn btn btn-payment inside-out" role="button">No, Log Out</a>
+        </div>        
+      </div>
+    </div>
+</div>
+
+
       <p><br>
 To ensure that your tax return is processed accurately, please answer the  following questions.<br>
 <br>
