@@ -2,79 +2,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+.hidden {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+
+.not-visible {
+  visibility:hidden;
+}
+</style>
 <title>Untitled Document</title>
+
+
 </head>
 
 <body>
 
-<h1>IRS logo that works with ZT</h1>
-
-<div class="small-4 large-2 column logo-container"id="irsLogo_wrapper">
-       <a title="Click here to go to IRS.gov" href="http://www.irs.gov" class="small-12 columns logo" target="_blank"><img src="resources/img/irs_logo.svg" id="irs_logo" title="Click here to go to IRS.gov" alt="Click here to go to IRS.gov" role="img"></a>
-     </div>
-
-
-
-<h1>IRS logo that did not work with ZT</h1>
-
-<div class="header">
-<a href="https://www.irs.gov/" class="logo" title="Click here to go to IRS.gov">
-<img src="/static_assets/img/logo.png" alt="Internal Revenue Service United States Department of the Treasury"></a>
-</div>
-
-
-<div class="session-timeout-modal" role="dialog" aria-modal="true" aria-labelledby="aria-modal-title" aria-describedby="timeout-modal-body">
-    <div class="modal-header session-timeout">
-        <h2 id="aria-modal-title" class="title-primary" irs-test-id="timeouttitle" tabIndex="-1">Session Expiration Notice</h2>
-    </div>
-    <div id="timeout-modal-body" class="modal-body session-timeout">
-      <p><strong><span>Your session will expire in</span> {{$ctrl.minutes}}<span class="sr-only">minutes</span>:{{$ctrl.seconds}}<span class="sr-only">seconds</span>. <span>Do you need more time?</span></strong></p>
-    </div>
-    <div class="modal-footer session-timeout-footer">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <a href="" data-ng-click="$ctrl.continueSession()" class="continue-btn btn btn-payment" role="button">Yes</a>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          <a href="" data-ng-click="$ctrl.logoutTimeout()" class="logout-btn btn btn-payment inside-out" role="button">No, Log Out</a>
-        </div>        
-      </div>
-    </div>
-</div>
-<h2>Period outside the link</h2>
-<p>All business tax payments should be made through the <a id="busLink" href="https://u10.eftps.gov/directpay/leavesite?id=3" target="_blank">Electronic Federal Tax Payment System (EFTPS)</a>.</p>
-<p>&nbsp;</p>
-<h2>Period intside the link</h2>
-<p>All business tax payments should be made through the <a id="busLink2" href="https://u10.eftps.gov/directpay/leavesite?id=3" target="_blank">Electronic Federal Tax Payment System (EFTPS).</a> </p>
-
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2>HELP Button</h2>
-<p>The trigger is currently set up like this: </p>
-<p><a href="#" role="button" aria-expanded="false">Shared Responsibility Payment (Healthcare) <span class="irs-help-tip-icon">
-  <span class="sr-only">Show help text</span>
-</span></a></p>
-<p>
-  
-  So honestly it’s a little funny that the “Show help text” is inside the span that draws the icon, but it was that way when the icon was the button and I didn’t change it because I didn’t think it would matter.
-  
-I was interpreting option 2 to mean changing it to this:</p>
-<p> <a href="#" role="button" aria-expanded="false">
-  Shared Responsibility Payment (Healthcare)
-  <span class="irs-help-tip-icon"></span>
-</a></p>
-
-<p>Example Code:</p>
-<p> <a href="products.html">
-  <img src="icon.gif" alt="">
-  Products page
-</a></p>
-<p>  
-  
-  <a href="help.gif">
-    
-  Go to the home page<img src="house.gif" alt="home page icon">
-  </a></p>
+<h1>Footnote</h1>
+<p>* Payments for this amount are not accepted theough Direct Pay or by the Debit/Credit card providers. Pay by <a href="https://www.google.com/">EFTPD</a> or <a href="https://www.google.com/">mail a check or money order</a>.</p>
+<h1>&nbsp;</h1>
+<h1>Link techniques</h1>
+<h2>1. A link</h2>
+<a href="https://www.google.com">Google</a>
+<br>
+<h2>2. A link with off-screen positioning</h2>
+<a class="hidden" href="https://www.google.com">Google</a>
+<br>
+<h2>3. A link with CSS visibility:hidden</h2>
+<a class="not-visible" href="https://www.google.com">Google</a>
+<br>
+<h2>4. A link with aria-hidden="true"</h2>
+<a href="https://www.google.com" aria-hidden="true">Google</a>
+<br>
+<h2>5. A link with HTML5 hidden</h2>
+<a href="https://www.google.com" hidden >Google</a>
+<br>
+<h2>6. span with a role of link</h2>
+<span role="link">Don't do this</span>
+<br>
+<h1>Results</h1>
+<ol>
+  <li>Supported</l1>
+  <li>Not Supported</l1>
+  <li>Not Supported</l1>
+  <li>Supported</l1>
+  <li>Not Supported</l1>
+  <li>Supported</l1>
+</ol>
+<p>Supported = Responded to "click link" command, and by calling "click" + a word in the label. Not supported = Did not respond to either command. Tested on Windows 10, Chrome 65 with Dragon Professional Individual 15.</p>
 </body>
 </html>
