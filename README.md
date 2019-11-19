@@ -8,6 +8,9 @@
 <body>
 <h1>checking on ios</h1>
 
+<label for="expire">Expiration date (MM/YYYY): </label> <input type="text" name="expire" id="expire">
+
+
 <input type="text" name="search" aria-labelledby="searchbutton">
 <button id="searchbutton" type="submit">Search</button>
 <br />
