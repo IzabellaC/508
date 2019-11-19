@@ -10,8 +10,8 @@
 
 <input type="text" name="search" aria-labelledby="searchbutton">
 <button id="searchbutton" type="submit">Search</button>
-<br />
-<br />
+
+
 <br />
 
 <div data-component="DateField"><label class="InputLabel-label--2G5wy " id="date-field-rangeFrom-label" for="date-field-rangeFrom" data-component="InputLabel">From</label><p class="DateField-hintStyle--2xa3Q" id="date-field-rangeFrom-hint">MM/DD/YYYY</p><input name="From" class="DateField-input--3iZXG" id="date-field-rangeFrom" aria-required="false" aria-describedby="date-field-rangeFrom-hint" aria-labelledby="date-field-rangeFrom-label" aria-label="Date From" type="text" placeholder="MM/DD/YYYY" value=""><p></p></div>
