@@ -6,13 +6,12 @@
 </head>
 
 <body>
-<h1>checking on ios</h1>
+<h1>checking on ios - 3.37</h1>
 
-<label for="expire">Expiration date (MM/YYYY): </label> <input type="text" name="expire" id="expire">
+<label for="expire">To (MM/YYYY): </label> <input type="text" name="expire" placeholder="MM/DD/YYYY" aria-label="Date From" id="expire">
 
 
-<input type="text" name="search" aria-labelledby="searchbutton">
-<button id="searchbutton" type="submit">Search</button>
+ 
 <br />
 <br />
 <br />
