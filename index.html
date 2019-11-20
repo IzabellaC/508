@@ -6,14 +6,21 @@
 </head>
 
 <body>
-<h1>checking aria-label on iOS - 7pm</h1>
-     
+wwx 1
+	<label id="expLabel" for="expire">Expiration date:</label>
+<span>
+	<input type="text" name="expire" id="expire" aria-labelledby="expLabel" aria-describedby="expDesc">
+	<span id="expDesc">MM/YYYY</span>
+</span>
+	
+	
+	ex 2
+<label id="expLabel" for="expire" tabindex="-1">Expiration date:</label>
 <span>
 	<input type="text" name="expire" id="expire" aria-labelledby="expLabel expDesc">
-	<span id="expDesc" tabindex="-1">MM/YYYY</span>     
-       <label id="expLabel" for="expire" tabindex="-1">To MM/YYYY:</label>
-
-</span>
+	<span id="expDesc" tabindex="-1">MM/YYYY</span>
+</span>	
+	
 
 </body>
 
