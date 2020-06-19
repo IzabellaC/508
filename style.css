@@ -1,0 +1,107 @@
+.ols-ui--Accordion-accordionItem {
+    border-bottom: solid 1px #f3f3f3;
+    margin: 0;
+  }
+  
+  .ols-ui--Accordion-accordionItem h2,
+  .ols-ui--Accordion-accordionItem h3,
+  .ols-ui--Accordion-accordionItem h4,
+  .ols-ui--Accordion-accordionItem h5,
+  .ols-ui--Accordion-accordionItem h6 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  
+  .ols-ui--Accordion-accordionItem .ols-ui--Accordion-noBorder {
+    border-bottom: none;
+  }
+  
+  .ols-ui--Accordion-trigger {
+    padding: 0;
+    border: 0;
+    margin: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    -webkit-font-smoothing: auto;
+    font-weight: 400;
+    text-align: left;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #5b616b;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    padding-left: 32px;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .ols-ui--Accordion-trigger[disabled] {
+    color: #5b616b;
+    cursor: not-allowed;
+  }
+  
+  .ols-ui--Accordion-trigger[disabled] .ols-ui--Accordion-triggerIcon {
+    fill: #5b616b;
+  }
+  
+  .ols-ui--Accordion-padding .ols-ui--Accordion-trigger {
+    padding-left: 48px;
+  }
+  
+  .ols-ui--Accordion-triggerIcon {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    fill: #0073af;
+  }
+  
+  .ols-ui--Accordion-padding .ols-ui--Accordion-triggerIcon {
+    left: 16px;
+  }
+  
+  .ols-ui--Accordion-body {
+    color: #5b616b;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-y: hidden;
+    transition-duration: 300ms;
+    transition-property: max-height;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+  
+  .ols-ui--Accordion-body > div {
+    padding-bottom: 16px;
+    padding-left: 32px;
+  }
+  
+  .ols-ui--Accordion-body > div > *:first-child {
+    margin-top: 0;
+  }
+  
+  .ols-ui--Accordion-body > div > *:last-child {
+    margin-bottom: 0;
+  }
+  
+  .ols-ui--Accordion-body > div.ols-ui--Accordion-noBodyIndent {
+    padding-left: 0;
+  }
+  
+  .ols-ui--Accordion-padding
+  .ols-ui--Accordion-body > div {
+    padding-left: 48px;
+    padding-right: 16px;
+  }
+  
+  .ols-ui--Accordion-padding .ols-ui--Accordion-body > div.ols-ui--Accordion-noBodyIndent {
+    padding-left: 16px;
+  }
