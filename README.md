@@ -6,6 +6,35 @@
 </head>
 
 <body>
+ 
+<table> 
+<caption> caption> 
+<tr> 
+<th scope="col">First Name</th> 
+<th scope="col">DOB</th> 
+<th scope="col">SSN</th> 
+<th scope="col">Status</th> 
+<th scope="col">Action</th> 
+
+</tr> 
+<tr> 
+<th scope="row">Mica</th> 
+<td>02/20/2020</td> 
+<td>*******1234  </td>  
+<td>Action Pending  </td> 
+<td>Action</td>  
+
+</tr>
+
+<tr> 
+<th scope="row">John</th> 
+<td>02/20/2018</td> 
+<td>*******1236  </td>  
+<td>Action Pending  </td> 
+<td>Action</td>  
+
+</tr>
+ </table>
 <h1>checking on ios - 3.37</h1>
 
 <label for="expire">To (MM/YYYY): </label> <input type="text" name="expire" placeholder="MM/DD/YYYY" aria-label="Date From" id="expire">
